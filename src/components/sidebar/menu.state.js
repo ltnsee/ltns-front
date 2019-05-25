@@ -1,12 +1,5 @@
-import { helper } from './Helper';
-import { loginUserState } from 'app/state/login.user.state';
-import { IMenu } from './MenuState';
-import { observable, action } from 'mobx';
-import { eventHelper } from 'app/helper/event.helper';
 import { Menus } from './menu';
-import { roleHelper } from 'app/helper/role.helper';
-import { urlHelper } from 'app/helper/url.helper';
-import { ls } from 'app/locale/locale.state';
+import { urlHelper } from '../../app/helper/url.helper';
 
 export class MenuState {
     menus = {
@@ -23,6 +16,7 @@ export class MenuState {
         this.baseMenus.map(m => {
             if (m.subMenus) {
                 m.subMenus = m.subMenus.filter(s => {
+                    // TODO 为以后过滤用
                     return true;
                 });
             }
@@ -35,11 +29,11 @@ export class MenuState {
         }, 100);
     }
 
-    @action setMenus(menus) {
+    setMenus(menus) {
         this.menus = menus;
     }
 
-    @action init() {
+    init() {
         let navs = [];
         this.baseMenus.map((menu, index) => {
             menu.link = urlHelper.getPath(menu.link);
@@ -55,7 +49,7 @@ export class MenuState {
             }
             if (menu.subMenus) {
                 menu.subMenus.map((m, i) => {
-                    m.link = helper.getPath(m.link);
+                    m.link = urlHelper.getPath(m.link);
                     if (window.location.pathname.indexOf(m.link) === 0) {
                         if (navs.map(n => n.link).indexOf(m.link) === -1) {
                             navs.splice(navs.map(n => n.link).indexOf(m.link), 1);
@@ -69,18 +63,5 @@ export class MenuState {
                 });
             }
         });
-        if (navs) {
-            eventHelper.dispatch(eventHelper.event.SetNav, navs);
-        }
-        if ($) {
-            $('.scroll-sidebar').slimScroll({
-                position: 'left'
-            , size: '5px'
-            , height: '100%'
-            , color: '#dcdcdc'
-            });
-            $('.scroll-sidebar, .slimScrollDiv')
-                .css('overflow-x', 'visible').parent().css('overflow', 'visible');
-        }
     }
 }

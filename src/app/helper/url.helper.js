@@ -24,21 +24,24 @@ export class UrlHelper {
     }
     /**
      * 
-     * @param  {[string]} paths 
+     * @param  {string} paths 
      */
-    getPath(...paths) {
+    getPath(paths) {
         let url = '';
-        if (Array.isArray(paths[0])) {
-            url = paths[0].join('/');
-        } else if (typeof paths[0] === 'string') {
-            url = paths[0];
+        if (Array.isArray(paths)) {
+            url = paths.join('/');
+        } else if (typeof paths === 'string') {
+            url = paths;
         } else {
             url = '';
         }
-        if (url.length === 0) {
-            return '/';
+        if (url.length === 0 || url === '/') {
+            return '/web';
         }
-        return '/' + url;
+        if (url.indexOf('/web') > -1) {
+            return url;
+        }
+        return '/web' + url;
     }
     /**
      * 

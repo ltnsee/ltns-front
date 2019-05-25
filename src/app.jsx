@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { Router, Route } from 'react-router';
 import { Header } from './components/header/header.page';
 import { Sidebar } from './components/sidebar/sidebar.page';
-import { BasicsRouter } from './basics/basics.router';
+import { Css3Router } from './css3/css3.router';
 import { urlHelper } from './app/helper/url.helper';
 
 export class App extends Component {
@@ -21,14 +21,14 @@ export class App extends Component {
             <Router history={urlHelper.history}>
                 <div className="app">
                     <Route
-                        path={urlHelper.getPath('/')}
+                        path={urlHelper.getPath()}
                         render={props => (
                             <div>
                                 <Header />
                                 <Sidebar />
                                 <div className="page-wrapper" style={{ minHeight: window.innerHeight - 70 - 40 }}>
                                     <div className="container-fluid">
-                                        <BasicsRouter />
+                                        <Css3Router />
                                     </div>
                                     <footer className="footer">© 2016-2019 {'学习案例'}</footer>
                                 </div>

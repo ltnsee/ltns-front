@@ -3,22 +3,22 @@
  */
 export const Menus = [
     {
-        link: '/home',
-        name: 'home',
-        icon: 'mdi-gauge',
+        link: '/',
+        name: '首页',
+        icon: 'home'
     },
     {
-        link: '/approval/standard',
-        name: 'wait.approval.meeting',
-        icon: 'mdi-pencil-box-outline',
+        link: '/css3',
+        name: 'CSS3',
+        icon: 'css3',
         subMenus: [
             {
-                link: '/approval/standard',
-                name: 'approval.standard'
+                link: '/css3/3d',
+                name: '3D'
             },
             {
-                link: '/approval/customer',
-                name: 'approval.customer'
+                link: '/css3/background',
+                name: '背景'
             }
         ]
     }

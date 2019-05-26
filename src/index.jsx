@@ -4,9 +4,7 @@ import { App } from './app';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
-
 const store = createStore(() => [], {}, applyMiddleware());
-
 ReactDOM.render(
     <Provider store={store}>
         <App />

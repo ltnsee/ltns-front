@@ -1,11 +1,73 @@
 /* CSS Document */
-html, body, div, span, object, iframe,h1, h2, 
-h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code,del, dfn, 
-em, img, ins,kbd, q, samp,small, strong, sub, sup, var,b, i,dl, dt, dd, 
-ol, ul, li,fieldset, form, label, legend,table, caption, tbody, 
-tfoot,thead,tr, th, td,article, aside, canvas, details, figcaption, 
-figure, footer, header, hgroup, menu, nav, section, summary,time, mark, 
-audio, video {
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -14,41 +76,53 @@ audio, video {
     list-style: none;
     vertical-align: baseline;
     background: transparent;
-    outline-style: none;/*FF*/ 
+    outline-style: none;
+    /*FF*/
 }
+
 body {
     line-height: 1;
 }
+
 a {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size:  100%;
+    font-size: 100%;
     outline: none;
     text-decoration: none;
     vertical-align: baseline;
     background: transparent;
-     
+
 }
-a:hover,a:focus {
+
+a:hover,
+a:focus {
     text-decoration: none;
-    /* bblr: expression(this.onFocus=this.blur()); *//*IE */
-    outline-style: none;/*FF*/ 
+    /* bblr: expression(this.onFocus=this.blur()); */
+    /*IE */
+    outline-style: none;
+    /*FF*/
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-input, select {
-    vertical-align:middle;
+
+input,
+select {
+    vertical-align: middle;
 }
 
 .fl {
     float: left;
 }
+
 .fr {
     float: right;
 }
+
 /*css为clearfix，清除浮动*/
 .clearfix::before,
 .clearfix::after {
@@ -59,11 +133,14 @@ input, select {
     visibility: hidden;
     clear: both;
 }
+
 .clearfix:after {
-    clear:both;
-} 
-.clearfix { 
-    *zoom:1;/*IE/7/6*/
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+    /*IE/7/6*/
 }
 
 /* header */
@@ -89,15 +166,18 @@ input, select {
     z-index: 20;
     box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.05);
 }
+
 .sidebar-page-wrapper .scroll-sidebar {
     width: auto;
     height: 100%;
     overflow-y: auto;
 }
+
 .sidebar-page-wrapper .scroll-sidebar .sidebar-nav {
     background-color: #fff;
     padding: 15px 15px 30px;
 }
+
 .sidebar-nav ul li a {
     color: #607d8b;
     padding: 8px 35px 8px 45px;
@@ -110,23 +190,30 @@ input, select {
     white-space: nowrap;
     position: relative;
 }
+
 .sidebar-nav ul li.active a.menu-item {
-    background-color: #00b5e5; 
+    background-color: #00b5e5;
     color: #ffffff;
 }
+
 .sidebar-nav ul.sub-menus {
     display: none;
-}.sidebar-nav ul.sub-menus.show {
+}
+
+.sidebar-nav ul.sub-menus.show {
     display: block;
 }
+
 .sidebar-nav ul.show li.active a.sub-menu-item {
-    color: #00b5e5; 
+    color: #00b5e5;
 }
+
 .sidebar-nav ul li a i:first-child {
     position: absolute;
     top: 10px;
     left: 10px;
 }
+
 .sidebar-nav ul li a i:last-child {
     position: absolute;
     top: 10px;
@@ -139,9 +226,15 @@ input, select {
     margin-top: 70px;
     padding-bottom: 40px;
     background-color: pink;
+    position: relative;
 }
+
 .container-fluid {
-    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 40px;
+    left: 0;
+    right: 0;
 }
 
 /* footer */

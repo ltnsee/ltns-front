@@ -34,6 +34,7 @@ export class MenuState {
     }
 
     init() {
+        debugger;
         let navs = [];
         this.baseMenus.map((menu, index) => {
             menu.link = urlHelper.getPath(menu.link);

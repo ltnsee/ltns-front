@@ -1,0 +1,422 @@
+.sand-animate-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    /*background-size:cover ;*/
+    /*近大远小效果,*切记一定要加在父元素上*/
+    perspective: 800px;
+}
+
+ul.sand-animate {
+    width: 200px;
+    height: 200px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    bottom: 150px;
+    /*使被转换的子元素保留其 3D 转换*/
+    transform-style: preserve-3d;
+    /*延各个轴旋转transform:rotateX(0deg) rotateY(0deg) rotateZ(0deg);*/
+    /*定义动画*/
+    animation: sport 6s linear 0s infinite normal;
+}
+
+.x1,
+.x2,
+.x3,
+.x4,
+.x5,
+.x6,
+.x7 {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.x1 {
+    animation: img 6s linear 0s infinite normal;
+}
+
+.x2 {
+    animation: img1 6s linear 1s infinite normal;
+}
+
+.x3 {
+    animation: img2 6s linear 2s infinite normal;
+}
+
+.x4 {
+    animation: img3 6s linear 3s infinite normal;
+}
+
+.x5 {
+    animation: img4 6s linear 4s infinite normal;
+}
+
+.x6 {
+    animation: img5 6s linear 5s infinite normal;
+}
+
+.x7 {
+    animation: img6 6s linear 6s infinite normal;
+}
+
+@keyframes sport {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes img {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+
+    20% {
+        width: 50px;
+        height: 50px;
+        opacity: .8;
+    }
+
+    40% {
+        width: 100px;
+        height: 100px;
+        opacity: .6;
+    }
+
+    60% {
+        width: 150px;
+        height: 150px;
+        opacity: .4;
+    }
+
+    60% {
+        width: 200px;
+        height: 200px;
+        opacity: .2;
+    }
+
+    100% {
+        width: 260px;
+        height: 260px;
+        opacity: 0;
+    }
+}
+
+@keyframes img1 {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+
+    20% {
+        width: 50px;
+        height: 50px;
+        opacity: .8;
+    }
+
+    40% {
+        width: 100px;
+        height: 100px;
+        opacity: .6;
+    }
+
+    60% {
+        width: 150px;
+        height: 150px;
+        opacity: .4;
+    }
+
+    60% {
+        width: 200px;
+        height: 200px;
+        opacity: .2;
+    }
+
+    100% {
+        width: 260px;
+        height: 260px;
+        opacity: 0;
+    }
+}
+
+@keyframes img2 {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+
+    20% {
+        width: 50px;
+        height: 50px;
+        opacity: .8;
+    }
+
+    40% {
+        width: 100px;
+        height: 100px;
+        opacity: .6;
+    }
+
+    60% {
+        width: 150px;
+        height: 150px;
+        opacity: .4;
+    }
+
+    60% {
+        width: 200px;
+        height: 200px;
+        opacity: .2;
+    }
+
+    100% {
+        width: 260px;
+        height: 260px;
+        opacity: 0;
+    }
+}
+
+@keyframes img3 {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+
+    20% {
+        width: 50px;
+        height: 50px;
+        opacity: .8;
+    }
+
+    40% {
+        width: 100px;
+        height: 100px;
+        opacity: .6;
+    }
+
+    60% {
+        width: 150px;
+        height: 150px;
+        opacity: .4;
+    }
+
+    60% {
+        width: 200px;
+        height: 200px;
+        opacity: .2;
+    }
+
+    100% {
+        width: 260px;
+        height: 260px;
+        opacity: 0;
+    }
+}
+
+@keyframes img4 {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+
+    20% {
+        width: 50px;
+        height: 50px;
+        opacity: .8;
+    }
+
+    40% {
+        width: 100px;
+        height: 100px;
+        opacity: .6;
+    }
+
+    60% {
+        width: 150px;
+        height: 150px;
+        opacity: .4;
+    }
+
+    60% {
+        width: 200px;
+        height: 200px;
+        opacity: .2;
+    }
+
+    100% {
+        width: 260px;
+        height: 260px;
+        opacity: 0;
+    }
+}
+
+@keyframes img5 {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+
+    20% {
+        width: 50px;
+        height: 50px;
+        opacity: .8;
+    }
+
+    40% {
+        width: 100px;
+        height: 100px;
+        opacity: .6;
+    }
+
+    60% {
+        width: 150px;
+        height: 150px;
+        opacity: .4;
+    }
+
+    60% {
+        width: 200px;
+        height: 200px;
+        opacity: .2;
+    }
+
+    100% {
+        width: 260px;
+        height: 260px;
+        opacity: 0;
+    }
+}
+
+@keyframes img6 {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+
+    20% {
+        width: 50px;
+        height: 50px;
+        opacity: .8;
+    }
+
+    40% {
+        width: 100px;
+        height: 100px;
+        opacity: .6;
+    }
+
+    60% {
+        width: 150px;
+        height: 150px;
+        opacity: .4;
+    }
+
+    60% {
+        width: 200px;
+        height: 200px;
+        opacity: .2;
+    }
+
+    100% {
+        width: 260px;
+        height: 260px;
+        opacity: 0;
+    }
+}
+
+ul.sand-animate:hover {
+    animation-play-state: paused;
+}
+
+ul.sand-animate:hover li img {
+    opacity: .5;
+}
+
+ul.sand-animate li:hover {
+    transform: translateZ(10px);
+}
+
+ul.sand-animate li:hover img {
+    opacity: 1;
+    transform: scale(1.2, 1.2);
+}
+
+ul.sand-animate li {
+    list-style: none;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    line-height: 200px;
+    font-size: 64px;
+    font-weight: 700;
+    background: #000;
+}
+
+ul.sand-animate li img {
+    /*只要父元素被拉升了子元素也会跟着被拉升*/
+    width: 200px;
+    height: 200px;
+    border: 3px solid pink;
+    box-sizing: border-box;
+    /*transition: all .5s;*/
+}
+
+ul.sand-animate li:nth-child(1) {
+    transform: rotateY(60deg) translateZ(200px);
+}
+
+ul.sand-animate li:nth-child(2) {
+    transform: rotateY(120deg) translateZ(200px);
+}
+
+ul.sand-animate li:nth-child(3) {
+    transform: rotateY(180deg) translateZ(200px);
+}
+
+ul.sand-animate li:nth-child(4) {
+    transform: rotateY(240deg) translateZ(200px);
+}
+
+ul.sand-animate li:nth-child(5) {
+    transform: rotateY(300deg) translateZ(200px);
+}
+
+ul.sand-animate li:nth-child(6) {
+    transform: rotateY(360deg) translateZ(200px);
+}
+
+.video {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -200px;
+    width: 400px;
+    height: 300px;
+}
+
+.video video {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 380px;
+    height: 276px;
+}

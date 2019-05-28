@@ -12,14 +12,14 @@ export class SandAnimatePage extends React.Component {
                     {[1,2,3,4,5,6].map(li => {
                         return (
                             <li key={li}>
-                                <img src={require(`../picture/${li}.jpg`)} />
+                                <img src={require(`../picture/${li}.jpg`)} alt="" />
                             </li>
                         );
                     })}
                 </ul>
                 {
                     [1,2,3,4,5,6,7].map(img => {
-                        return <img key={img} src={require('../picture/x4.png')} className={`x${img}`} />;
+                        return <img key={img} src={require('../picture/x4.png')} className={`x${img}`} alt="" />;
                     })
                 }
                 <audio src={require('../picture/陈奕迅 - 好久不见.mp3')} autoplay="autoplay" loop="loop" />

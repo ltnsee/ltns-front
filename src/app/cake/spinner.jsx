@@ -27,7 +27,6 @@ const SpinnerSvg = () => {
 
 export class LoadingPage extends React.Component {
     render() {
-        console.log('props', this.props);
         return (
             <div className={'loading-page'}>
                 <div className="spinner-icon">

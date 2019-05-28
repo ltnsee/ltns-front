@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import * as classnames from 'classnames';
 import { Link } from 'react-router-dom';
 import { MenuState } from './menu.state';
+import { bindActionCreators } from 'redux';
+import { initBaseMenus, historyListen } from './menu.reducer';
 import { urlHelper } from '../../app/helper/url.helper';
 
 export class Sidebar extends Component {
@@ -12,12 +14,16 @@ export class Sidebar extends Component {
     // }
     constructor(props) {
         super(props);
+        console.log('props', props);
         this.menuState = new MenuState();
+        // urlHelper.history.listen((r, v) => {
+        //     this.init();
+        // });
     }
 
     render() {
         let menus = this.menuState.menus;
-        console.log('menus', menus, this.menuState.baseMenus);
+        // console.log('menus', menus, this.menuState.baseMenus);
         return (
             <aside className="sidebar-page-wrapper">
                 <div className="scroll-sidebar">
@@ -72,16 +78,18 @@ export class Sidebar extends Component {
                     </nav>
                 </div>
             </aside>
-        )
+        );
     }
 };
 
-const mapStateToProps = (state) => ({
-
+const mapStateToProps = state => ({
+    menuReducer: state.menuReducer
 });
 
 const mapDispatchToProps = {
-
+    initBaseMenus, 
+    historyListen
 };
+console.log('mapDispatchToProps', mapStateToProps(), mapDispatchToProps());
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

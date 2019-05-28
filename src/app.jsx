@@ -5,8 +5,8 @@ import './layout/styles/app.css';
 import 'font-awesome/css/font-awesome.css';
 import { connect } from 'react-redux';
 import { Router, Route } from 'react-router';
-import { Header } from './components/header/header.page';
-import { Sidebar } from './components/sidebar/sidebar.page';
+import { Header } from './navigate/header/header.page';
+import { Sidebar } from './navigate/sidebar/sidebar.page';
 import { Css3Router } from './css3/css3.router';
 import { urlHelper } from './app/helper/url.helper';
 
@@ -16,7 +16,7 @@ export class App extends Component {
     // }
 
     render() {
-        console.log('urlHelper.history', urlHelper.history);
+        console.log('urlHelper.history', urlHelper.history, this.props);
         return (
             <Router history={urlHelper.history}>
                 <div className="app">

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Switch, Route } from 'react-router';
+import { Switch, Route, Redirect } from 'react-router';
 import { urlHelper } from '../app/helper/url.helper';
 import { LoadablePage, LoadableClass } from '../app/cake/loadable.page';
 
@@ -7,6 +7,11 @@ export class Css3Router extends React.Component {
     render() {
         return (
             <Switch>
+                <Route
+                    path={urlHelper.getPath('/css3')}
+                    exact={true}
+                    render={() => <Redirect to={urlHelper.getPath('/css3/square')} />}
+                />
                 <Route
                     path={urlHelper.getPath('/css3/square')}
                     render={(props) => LoadablePage({

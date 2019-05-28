@@ -1,22 +1,15 @@
 
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import './layout/styles/app.css';
 import 'font-awesome/css/font-awesome.css';
-import { connect } from 'react-redux';
 import { Router, Route } from 'react-router';
 import { Header } from './navigate/header/header.page';
-import { Sidebar } from './navigate/sidebar/sidebar.page';
+import Sidebar from './navigate/sidebar/sidebar.page';
 import { Css3Router } from './css3/css3.router';
 import { urlHelper } from './app/helper/url.helper';
 
 export class App extends Component {
-    // static propTypes = {
-    //     props: PropTypes
-    // }
-
     render() {
-        console.log('urlHelper.history', urlHelper.history, this.props);
         return (
             <Router history={urlHelper.history}>
                 <div className="app">
@@ -37,16 +30,6 @@ export class App extends Component {
                     />
                 </div>
             </Router>
-        )
+        );
     }
 };
-
-const mapStateToProps = (state) => ({
-
-});
-
-const mapDispatchToProps = {
-
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);

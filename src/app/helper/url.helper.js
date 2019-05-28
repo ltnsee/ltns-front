@@ -1,4 +1,4 @@
-import createBrowserHistory from 'history/createBrowserHistory';
+import { createBrowserHistory } from 'history';
 
 export class UrlHelper {
     history = createBrowserHistory();

@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 
 import { menuReducer } from '../navigate/sidebar/menu.reducer';
 
-const initialState = {};
+const initState = {};
 const middleware = [thunk];
 
 // 拆分reducer
@@ -19,9 +19,9 @@ export const appReducer = combineReducers({
 // 全局Store
 export const appStore = createStore(
     appReducer,
-    initialState,
-    compose(
-        applyMiddleware(...middleware),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
+    initState,
+    // compose(
+    //     applyMiddleware(...middleware),
+    //     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    // )
 );

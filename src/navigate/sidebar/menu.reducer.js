@@ -10,19 +10,15 @@ const initState = {
     baseMenus: []
 }
 
-export const initBaseMenus = (payload) => dispatch => {
-    dispatch({
-        type: 'INIT_BASE_MENUS',
-        payload,
-    });
-};
+export const initBaseMenus = (payload) => ({
+    type: 'INIT_BASE_MENUS',
+    payload,
+});
 
-export const historyListen = (payload) => dispatch => {
-    dispatch({
-        type: 'HISTORY_LISTEN',
-        payload,
-    });
-};
+export const historyListen = (payload) => ({
+    type: 'HISTORY_LISTEN',
+    payload,
+});
 
 export const menuReducer = (state = initState, action) => {
     switch (action.type) {
@@ -32,7 +28,7 @@ export const menuReducer = (state = initState, action) => {
                 // TODO 为以后过滤用
                 return true;
             });
-            state.baseMenus = state.map(m => {
+            state.baseMenus = state.baseMenus.map(m => {
                 if (m.subMenus) {
                     m.subMenus = m.subMenus.filter(s => {
                         // TODO 为以后过滤用

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as classnames from 'classnames';
 import { Link } from 'react-router-dom';
@@ -9,21 +9,23 @@ import { initBaseMenus, historyListen } from './menu.reducer';
 import { urlHelper } from '../../app/helper/url.helper';
 
 export class Sidebar extends Component {
-    // static propTypes = {
-    //     props: PropTypes
-    // }
+    static propTypes = {
+        menuReducer: PropTypes.shape({ }).isRequired,
+        initBaseMenus: PropTypes.func.isRequired,
+        historyListen: PropTypes.func.isRequired,
+    }
     constructor(props) {
         super(props);
         console.log('props', props);
         this.menuState = new MenuState();
-        // urlHelper.history.listen((r, v) => {
-        //     this.init();
-        // });
+        // this.props.initBaseMenus();
+        urlHelper.history.listen((r, v) => {   
+            this.props.historyListen();
+        });
     }
 
     render() {
         let menus = this.menuState.menus;
-        // console.log('menus', menus, this.menuState.baseMenus);
         return (
             <aside className="sidebar-page-wrapper">
                 <div className="scroll-sidebar">
@@ -90,6 +92,5 @@ const mapDispatchToProps = {
     initBaseMenus, 
     historyListen
 };
-console.log('mapDispatchToProps', mapStateToProps(), mapDispatchToProps());
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

@@ -10,15 +10,9 @@ const initState = {
     baseMenus: []
 }
 
-export const initBaseMenus = (payload) => ({
-    type: 'INIT_BASE_MENUS',
-    payload,
-});
+export const initBaseMenus = () => ({ type: 'INIT_BASE_MENUS' });
 
-export const historyListen = (payload) => ({
-    type: 'HISTORY_LISTEN',
-    payload,
-});
+export const historyListen = () => ({ type: 'HISTORY_LISTEN' });
 
 export const menuReducer = (state = initState, action) => {
     switch (action.type) {
@@ -37,6 +31,7 @@ export const menuReducer = (state = initState, action) => {
                 }
                 return m;
             });
+            console.log('INIT_BASE_MENUS', state);
             return state;
         case 'HISTORY_LISTEN':
             let navs = [];
@@ -68,7 +63,8 @@ export const menuReducer = (state = initState, action) => {
                         }
                     });
                 }
-            })
+            });
+            console.log('HISTORY_LISTEN', state);
             return state;
         default:
             return state;

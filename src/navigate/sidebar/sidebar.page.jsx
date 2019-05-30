@@ -3,35 +3,38 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as classnames from 'classnames';
 import { Link } from 'react-router-dom';
-import { MenuState } from './menu.state';
 import { bindActionCreators } from 'redux';
 import { initBaseMenus, historyListen } from './menu.reducer';
 import { urlHelper } from '../../app/helper/url.helper';
 
 export class Sidebar extends Component {
     static propTypes = {
-        menuReducer: PropTypes.shape({ }).isRequired,
+        menuReducer: PropTypes.shape({}).isRequired,
         initBaseMenus: PropTypes.func.isRequired,
         historyListen: PropTypes.func.isRequired,
     }
     constructor(props) {
         super(props);
         console.log('props', props);
-        this.menuState = new MenuState();
-        // this.props.initBaseMenus();
-        urlHelper.history.listen((r, v) => {   
-            this.props.historyListen();
+        props.initBaseMenus();
+        props.historyListen();
+        urlHelper.history.listen((r, v) => {
+            props.historyListen();
         });
     }
-
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('this.props', this.props, nextProps);
+    }
     render() {
-        let menus = this.menuState.menus;
+        let { menus, baseMenus } = this.props.menuReducer;
+        console.log('menus', menus);
         return (
             <aside className="sidebar-page-wrapper">
                 <div className="scroll-sidebar">
                     <nav className="sidebar-nav">
                         <ul id="sidebarnav">
-                            {this.menuState.baseMenus.map((menu, index) => {
+                            {baseMenus.map((menu, index) => {
+                                console.log('asd', index, menus.collapseMenu);
                                 return (
                                     <li
                                         className={classnames({
@@ -46,7 +49,7 @@ export class Sidebar extends Component {
                                                 {menu.subMenus && index === menus.collapseMenu ? (
                                                     <i className="fa fa-lg fa-angle-down" />
                                                 ) : (
-                                                    <i className="fa fa-lg fa-angle-right" />
+                                                        <i className="fa fa-lg fa-angle-right" />
                                                 )}
                                             </Link>
                                         )}
@@ -88,9 +91,9 @@ const mapStateToProps = state => ({
     menuReducer: state.menuReducer
 });
 
-const mapDispatchToProps = {
-    initBaseMenus, 
-    historyListen
-};
+const mapDispatchToProps = dispatch => ({
+    initBaseMenus: bindActionCreators(initBaseMenus, dispatch),
+    historyListen: bindActionCreators(historyListen, dispatch)
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

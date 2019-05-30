@@ -35,13 +35,13 @@ export class UrlHelper {
         } else {
             url = '';
         }
-        if (url.length === 0 || url === '/') {
-            return '/web';
+        if (url.length === 0) {
+            return '/';
         }
-        if (url.indexOf('/web') > -1) {
+        if (url.indexOf('/') > -1) {
             return url;
         }
-        return '/web' + url;
+        return (url[0] === '/' && '/') + url;
     }
     /**
      * 

@@ -21,12 +21,10 @@ export class MenuState {
                 });
             }
         });
+        this.init();
         urlHelper.history.listen((r, v) => {
             this.init();
         });
-        setTimeout(() => {
-            this.init();
-        }, 100);
     }
 
     setMenus(menus) {

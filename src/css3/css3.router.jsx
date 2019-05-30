@@ -8,8 +8,8 @@ export class Css3Router extends React.Component {
         return (
             <Switch>
                 <Route
-                    path={urlHelper.getPath('/css3')}
                     exact={true}
+                    path={urlHelper.getPath('/css3')}
                     render={() => <Redirect to={urlHelper.getPath('/css3/square')} />}
                 />
                 <Route

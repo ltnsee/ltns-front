@@ -10,7 +10,7 @@ import { urlHelper } from '../../app/helper/url.helper';
 export class Sidebar extends PureComponent {
     static propTypes = {
         menuReducer: PropTypes.shape({}).isRequired,
-        initBaseMenus: PropTypes.func.isRequired,
+        initMenus: PropTypes.func.isRequired,
         historyListen: PropTypes.func.isRequired,
     }
     constructor(props) {

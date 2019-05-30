@@ -12,7 +12,14 @@ export class Header extends Component {
     render() {
         return (
             <div className="header-page-wrapper clearfix">
-                <div className="logo fl">Accumulation</div>
+                <Link to={urlHelper.getPath('/')}>
+                    <div className="logo fl">
+                        <div className="logo-imager fl">
+                            <img src={require('../../layout/picture/eason.png')} alt=""/>
+                        </div>
+                        <div className="logo-title">信心花舍</div>
+                    </div>
+                </Link>
                 <ul className="header-right-nav fr">
                     <li className="notice-news fl">
                         <i className="fa fa-lg fa-bell-o"/>

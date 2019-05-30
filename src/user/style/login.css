@@ -1,0 +1,65 @@
+.login-page-warp {
+    height: 100%;
+    position: relative;
+    background-image: url('../picture/register-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-form {
+    width: 320px;
+    height: auto;
+    padding: 30px;
+    /* background-color: #fff; */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* opacity: 0.1; */
+    border-radius: 10px;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+}
+
+.login-form:hover {
+    background-color: rgba(255, 255, 255, 1);
+    /* opacity: 1; */
+}
+
+.login-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.user-account,
+.user-password,
+.login-submit {
+    margin-bottom: 16px;
+}
+
+.user-account input,
+.user-password input {
+    width: 300px;
+    height: 18px;
+    margin: 0;
+    padding: 10px 9px;
+    line-height: 18px;
+    color: #333;
+    font-family: Verdana, Tahoma, Arial;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.login-submit input {
+    width: 100%;
+    height: 40px;
+    line-height: 35px;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    color: #fff;
+    background: #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}

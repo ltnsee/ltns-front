@@ -147,7 +147,7 @@ select {
 /* header */
 .header-page-wrapper {
     width: 100%;
-    height: 70px;
+    height: 60px;
     background-color: #1E90FF;
     box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.05);
     position: fixed;
@@ -158,10 +158,29 @@ select {
 }
 
 .header-page-wrapper .logo {
-    width: 300px;
-    height: 100%;
-    background-color: #0000FF;
-    font-family: 'font-520-15590088500132';
+    padding: 6px;
+}
+
+.header-page-wrapper .logo .logo-imager {
+    width: 48px;
+    height: 48px;
+}
+
+.header-page-wrapper .logo .logo-imager img {
+    width: 48px;
+    height: 48px;
+}
+
+.header-page-wrapper .logo .logo-title {
+    width: 288px;
+    height: 48px;
+    color: #fff;
+    font-size: 35px;
+    font-family: serif;
+    line-height: 48px;
+    text-align: center;
+    letter-spacing: 18px;
+    background-color: #1E7FFF;
 }
 
 .header-right-nav {
@@ -171,7 +190,7 @@ select {
 
 .header-right-nav li {
     margin: 0 10px;
-    line-height: 70px;
+    line-height: 60px;
 }
 
 .header-right-nav li.notice-news {
@@ -198,7 +217,7 @@ select {
     width: 300px;
     background-color: #fff;
     position: fixed;
-    top: 70px;
+    top: 60px;
     bottom: 0;
     z-index: 20;
     box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.05);
@@ -260,16 +279,15 @@ select {
 /* content */
 .page-wrapper {
     margin-left: 300px;
-    margin-top: 70px;
-    padding-bottom: 40px;
-    background-color: pink;
+    margin-top: 60px;
+    background-color: #fff;
     position: relative;
 }
 
 .container-fluid {
     position: absolute;
     top: 0;
-    bottom: 40px;
+    bottom: 0;
     left: 0;
     right: 0;
 }

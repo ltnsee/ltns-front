@@ -14,7 +14,7 @@ ul.sand-square-rotate-wrap {
     /*延各个轴旋转*/
     transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
     /*定义动画*/
-    animation: sport 5s linear 0s infinite normal;
+    animation: sportX 5s linear 0s infinite normal;
 }
 
 ul.sand-square-rotate-wrap li {
@@ -31,7 +31,7 @@ ul.sand-square-rotate-wrap li {
 }
 
 
-@keyframes sport {
+@keyframes sportX {
     from {
         transform: rotateX(0deg);
     }

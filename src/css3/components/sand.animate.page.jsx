@@ -6,7 +6,7 @@ export class SandAnimatePage extends React.Component {
         return (
             <div className="sand-animate-wrap">
                 <div className="video">
-                    <video src={require('../picture/陈奕迅 - 好久不见.mkv')} autoplay="autoplay" muted="muted" controls="controls" />
+                    <video src={require('../picture/陈奕迅 - 好久不见.mkv')} autoPlay="autoplay" muted="muted" controls="controls" />
                 </div>
                 <ul className="sand-animate">
                     {[1,2,3,4,5,6].map(li => {
@@ -22,7 +22,7 @@ export class SandAnimatePage extends React.Component {
                         return <img key={img} src={require('../picture/x4.png')} className={`x${img}`} alt="" />;
                     })
                 }
-                <audio src={require('../picture/陈奕迅 - 好久不见.mp3')} autoplay="autoplay" loop="loop" />
+                {/* <audio src={require('../picture/陈奕迅 - 好久不见.mp3')} autoPlay="autoplay" loop="loop" /> */}
             </div>
         );
     }

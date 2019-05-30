@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as classnames from 'classnames';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
-import { initBaseMenus, historyListen } from './menu.reducer';
+import { initMenus, historyListen } from './menu.reducer';
 import { urlHelper } from '../../app/helper/url.helper';
 
-export class Sidebar extends Component {
+export class Sidebar extends PureComponent {
     static propTypes = {
         menuReducer: PropTypes.shape({}).isRequired,
         initBaseMenus: PropTypes.func.isRequired,
@@ -15,26 +15,19 @@ export class Sidebar extends Component {
     }
     constructor(props) {
         super(props);
-        console.log('props', props);
-        props.initBaseMenus();
-        props.historyListen();
+        props.initMenus();
         urlHelper.history.listen((r, v) => {
             props.historyListen();
         });
     }
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log('this.props', this.props, nextProps);
-    }
     render() {
         let { menus, baseMenus } = this.props.menuReducer;
-        console.log('menus', menus);
         return (
             <aside className="sidebar-page-wrapper">
                 <div className="scroll-sidebar">
                     <nav className="sidebar-nav">
                         <ul id="sidebarnav">
                             {baseMenus.map((menu, index) => {
-                                console.log('asd', index, menus.collapseMenu);
                                 return (
                                     <li
                                         className={classnames({
@@ -46,11 +39,11 @@ export class Sidebar extends Component {
                                             <Link to={urlHelper.getPath(menu.link)} className="menu-item">
                                                 <i className={`fa fa-lg fa-${menu.icon}`} />
                                                 <span className="">{menu.name}</span>
-                                                {menu.subMenus && index === menus.collapseMenu ? (
+                                                {menu.subMenus && (index === menus.collapseMenu ? (
                                                     <i className="fa fa-lg fa-angle-down" />
                                                 ) : (
-                                                        <i className="fa fa-lg fa-angle-right" />
-                                                )}
+                                                    <i className="fa fa-lg fa-angle-right" />
+                                                ))}
                                             </Link>
                                         )}
                                         {menu.subMenus && <ul
@@ -92,7 +85,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    initBaseMenus: bindActionCreators(initBaseMenus, dispatch),
+    initMenus: bindActionCreators(initMenus, dispatch),
     historyListen: bindActionCreators(historyListen, dispatch)
 });
 

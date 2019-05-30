@@ -9,13 +9,6 @@ import { Css3Router } from './css3/css3.router';
 import { urlHelper } from './app/helper/url.helper';
 
 export class App extends Component {
-    // constructor(props) {
-    //     super(props);
-
-    //     urlHelper.history.listen((r, v) => {
-    //         props.historyListen();
-    //     });
-    // }
     render() {
         return (
             <Router history={urlHelper.history}>

@@ -121,8 +121,8 @@
       "node"
     ],
     "watchPlugins": [
-      "/Users/minggangwang/Documents/ltns/node_modules/jest-watch-typeahead/filename.js",
-      "/Users/minggangwang/Documents/ltns/node_modules/jest-watch-typeahead/testname.js"
+      "/Users/minggangwang/Documents/ltns-front/node_modules/jest-watch-typeahead/filename.js",
+      "/Users/minggangwang/Documents/ltns-front/node_modules/jest-watch-typeahead/testname.js"
     ]
   },
   "babel": {

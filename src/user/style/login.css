@@ -1,7 +1,7 @@
 .login-page-warp {
     height: 100%;
     position: relative;
-    background-image: url('../picture/register-bg.jpg');
+    background-image: url('../picture/login-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -34,14 +34,13 @@
 .user-account,
 .user-password,
 .login-submit {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .user-account input,
 .user-password input {
     width: 300px;
     height: 18px;
-    margin: 0;
     padding: 10px 9px;
     line-height: 18px;
     color: #333;

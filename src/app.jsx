@@ -7,6 +7,7 @@ import Sidebar from './navigate/sidebar/sidebar.page';
 import { HomeRouter } from './home/home.router';
 import { Css3Router } from './css3/css3.router';
 import { UserRouter } from './user/user.router';
+import { NoteRouter } from './note/note.router';
 import { urlHelper } from './app/helper/url.helper';
 
 export class App extends Component {
@@ -21,6 +22,7 @@ export class App extends Component {
                             <HomeRouter />
                             <UserRouter />
                             <Css3Router />
+                            <NoteRouter />
                         </div>
                         {/* <footer className="footer">© 2016-2019 {'学习案例'}</footer> */}
                     </div>

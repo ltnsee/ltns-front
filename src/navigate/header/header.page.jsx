@@ -27,9 +27,16 @@ export class Header extends Component {
                     <li className="user-info fl">
                         <Link 
                             to={urlHelper.getPath('/login')}
-                            className="user-name"
+                            className="user-login"
                         >
-                            登录/注册
+                            登录
+                        </Link>
+                        /
+                        <Link 
+                            to={urlHelper.getPath('/register')}
+                            className="user-register"
+                        >
+                            注册
                         </Link>
                         <span className="user-head">
                             <i className="fa fa-lg fa-user-circle-o"/>

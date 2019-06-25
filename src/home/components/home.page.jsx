@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Button } from '../../modules/button';
 
 export class HomePage extends Component {
     // static propTypes = {

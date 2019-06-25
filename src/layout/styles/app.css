@@ -202,6 +202,17 @@ select {
     color: #fff;
 }
 
+.header-right-nav li.user-info .user-login {
+    font-size: 16px;
+    color: #fff;
+}
+
+.header-right-nav li.user-info .user-register {
+    font-size: 16px;
+    color: #fff;
+    margin-right: 10px;
+}
+
 .header-right-nav li.user-info .user-name {
     font-size: 16px;
     color: #fff;
